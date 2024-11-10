@@ -1,0 +1,8 @@
+{{ $type := .Get 0 }}
+{{ $content := .Inner }}
+
+<div class="notice {{ $type }}">
+  <div class="notice-content">
+    {{ $content | markdownify }}
+  </div>
+</div>

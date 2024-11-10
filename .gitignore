@@ -1,0 +1,16 @@
+.idea
+.vscode
+.fleet
+
+node_modules
+resources/**
+public/**
+
+data/dump/
+data/local/
+
+*.lock
+*.iml
+**/*.css.map
+
+**/.DS_Store

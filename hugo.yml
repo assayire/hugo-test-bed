@@ -1,0 +1,130 @@
+title: Hugo Test Bed
+theme: winston
+themesDir: themes
+
+baseURL: ''
+relativeurls: true
+languageCode: en-us
+ignorefiles: [ "data/dump/.*", "data/local/.*" ]
+# ignoreLogs: [ "dbg", "tblshoot" ]
+
+
+cascade:
+  - build:
+      render: never
+      list: local
+    _target:
+      path: "{/links/**,/til/**}"
+
+pagination:
+  pagerSize: 10
+
+
+security:
+  enableInlineShortcodes: true
+
+
+markup:
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
+  highlight:
+    style: dracula
+    codeFences: true
+    tabWidth: 2
+    anchorLineNos: true
+    guessSyntax: false
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    noHl: false
+  goldmark:
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+    parser:
+      attribute:
+        block: true
+
+
+module:
+  hugoVersion:
+    extended: true
+    min: 0.109.0
+
+
+params:
+  author:
+    email: hugo-tester@noreply.github.com
+    name: Hugo Tester
+  socials:
+    - github: "@churchuill"
+    - twitter: "@churchuill"
+    - linkedin: "@churchuill"
+    - mastodon: https://mastodon.online/@churchill
+  twitter_handle: "@churchill"
+  showAuthorOnHomepage: false
+  showAuthorOnPosts: true
+  showIntroContentOnHomepage: true
+  showPostsOnHomepage: false
+  usePaginationOnHomepage: false
+  limitPostsOnHomepage: 3
+  sortPostsByDateOldestFirst: false
+  addDot: false
+  addFrame: false
+  highlightColor: "#b31450" # "#7b16ff"
+  baseColor: "#ffffff"
+  baseOffsetColor: "#eaeaea"
+  headingColor: "#1c1b1d"
+  textColor: "#4e5157"
+  dotColor: "#b31450" # "#7b16ff"
+  woff2: commit-mono,sono,literata # Loads <font>.woff2 from static/fonts folder
+  fontFamilyHeading: TiemposText-Bold, Literata, serif
+  fontFamilyParagraph: "'Literata Light', Literata, serif"
+  fontFamilyQuote: "TiemposText-Bold2, 'Libre Baskerville2', serif"
+  fontFamilyMonospace: "CommitMono, monospace"
+  styles:
+    font_family_heading: TiemposText-Bold, Literata, serif
+    font_family_paragraph2: Literata, sans-serif
+    font_family_paragraph: "Roboto Serif"
+    font_family_quote: "'Libre Baskerville', serif"
+    font_family_monospace: "'Monaspace Xenon Var', monospace"
+
+#sectionPagesMenu: main
+
+menu:
+  main:
+    - identifier: home
+      name: 🏠 Home
+      url: /
+      weight: 1
+    - identifier: blog
+      name: 📃 Posts
+      weight: 2
+      url: /posts/
+    - identifier: pages
+      name: 📖 Pages
+      weight: 3
+      url: /pages/
+    - name: 🗣 Quotes
+      identifier: quotes
+      weight: 4
+      url: /quotes/
+    - name: 🔍 Search
+      identifier: search
+      weight: 5
+      url: /test/
+    - name: 🎫 Tags
+      identifier: tags
+      weight: 6
+      url: /tags/
+    - identifier: about
+      name: 🌀 About
+      weight: 100
+      url: /About/
